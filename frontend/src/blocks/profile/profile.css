@@ -1,0 +1,30 @@
+.profile {
+  max-width: 880px;
+  min-height: 120px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: space-between; */
+  padding-top: 37px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  column-gap: 30px;
+}
+
+@media screen and (max-width:900px){
+  .profile {
+    max-width: 720px;
+    column-gap: 0;
+  }
+}
+
+@media screen and (max-width:720px){
+  .profile {
+    max-width: 480px;
+    flex-direction: column;
+    padding-top: 42px;
+  }
+}

@@ -1,0 +1,12 @@
+.elements{
+  margin: 0 auto;
+  padding: 49px 0 0;
+  min-height: 100vh;
+}
+
+@media screen and (max-width:489px) {
+  .elements {
+    padding-top: 36px;
+  }
+
+}

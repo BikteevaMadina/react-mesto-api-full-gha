@@ -1,0 +1,11 @@
+.elements__discription {
+  display: flex;
+  justify-content: space-between;
+  max-width: 246px;
+  min-height: 79px;
+  margin: 0 auto;
+  align-items: center;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 26px 4px 24px 4px;
+}

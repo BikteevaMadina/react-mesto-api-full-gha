@@ -1,0 +1,7 @@
+.elements__like-discription{
+  display: flex;
+  flex-direction: column;
+  max-width: 22px;
+  min-height: 35px;
+  gap: 3px;
+}

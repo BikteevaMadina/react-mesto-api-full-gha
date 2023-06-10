@@ -1,0 +1,40 @@
+.profile__button-edit {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #FFFFFF;
+  background-image: url(../../../images/pancel.svg);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 10px 10px;
+  background-color: #000000;
+  margin-bottom: 8px;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity .3s ease;
+}
+
+.profile__button-edit:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 489px) {
+  .profile__button-edit {
+    width: 18px;
+    height: 18px;
+    background-size: 7.5px 7.5px;
+
+
+  }
+}
+
+
+@media screen and (max-width: 320px) {
+  .profile__button-edit {
+    width: 18px;
+    height: 18px;
+    background-size: 7.5px 7.5px;
+    position: absolute;
+    right: 38px;
+    top: 280px;
+  }
+}

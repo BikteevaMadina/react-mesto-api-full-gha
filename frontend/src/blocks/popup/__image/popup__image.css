@@ -1,0 +1,10 @@
+.popup__image{
+  display: block;
+  margin: 0;
+  max-height: 75vh;
+  max-width: 75vw;
+  object-fit: cover;
+  object-position: center;
+  padding: 0;
+  background-color: rgba(0,0,0,.9);
+}

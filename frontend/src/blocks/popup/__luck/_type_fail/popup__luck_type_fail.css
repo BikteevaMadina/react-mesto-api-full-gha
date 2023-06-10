@@ -1,0 +1,5 @@
+.popup__luck_type_fail {
+    background-image: url(../../../../images/fail.svg);
+    margin: 0 auto;
+    margin-bottom: 32px;
+}

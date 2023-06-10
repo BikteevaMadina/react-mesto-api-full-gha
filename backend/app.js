@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 
 const { errors } = require('celebrate');
 
+const cors = require('cors');
+
 const router = require('./routes/routers');
 
 const {
@@ -21,6 +23,8 @@ const {
 } = process.env;
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 app.post('/signin', loginValidation, login);

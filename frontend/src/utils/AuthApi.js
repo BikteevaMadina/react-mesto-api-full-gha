@@ -37,7 +37,7 @@ class AuthApi {
 }
 
 const authApi = new AuthApi({
-  baseUrl: "https://auth.nomoreparties.co",
+  baseUrl: "https://api.dishastudy.nomoredomains.rocks",
   headers: {
     "Content-Type": "application/json",
   },

@@ -183,7 +183,7 @@ function App() {
         .then((data) => {
           if (data) {
             setIsLoggedIn(true);
-            setHeaderEmail(data.data.email);
+            setHeaderEmail(data.email);
             history.push("/");
           }
         })

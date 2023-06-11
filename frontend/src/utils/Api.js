@@ -76,11 +76,12 @@ class Api {
   }
 }
 
+const _token = localStorage.getItem("jwt");
 const api = new Api({
-  baseUrl: "https://mesto.nomoreparties.co/v1/cohort-60",
+  baseUrl: "https://api.dishastudy.nomoredomains.rocks",
   headers: {
-    authorization: "99ec2b63-21d0-4a18-afc1-bc28f717f199",
-    "Content-Type": "application/json",
+    "content-type": "application/json",
+    "authorization": `Bearer ${_token}`,
   },
 });
 

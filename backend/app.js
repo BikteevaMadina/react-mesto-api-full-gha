@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 
 const mongoose = require('mongoose');
@@ -25,8 +27,17 @@ const {
 } = process.env;
 
 const app = express();
+
+app.use(cors({
+  origin: [
+    'http://localhost:3001',
+    'https://dishastudy.nomoredomains.rocks',
+  ],
+  credentials: true,
+  maxAge: 30,
+}));
+
 app.use(express.json());
-app.use(cors());
 app.use(requestLogger);
 
 app.get('/crash-test', () => {

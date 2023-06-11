@@ -44,7 +44,7 @@ function App() {
       .getInitialCards()
       .then((data) => {
         setCards(
-          data.revers().map((card) => ({
+          data.reverse().map((card) => ({
             _id: card._id,
             name: card.name,
             link: card.link,

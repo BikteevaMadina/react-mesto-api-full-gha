@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.101.90
+IP 158.160.101.90
 
 Frontend https://dishastudy.nomoredomains.rocks
 

@@ -15,6 +15,8 @@ const {
 
 const auth = require('./middlewares/auth');
 
+const { requestLogger, errorLogger } = require('./middlewares/logger');
+
 const { createUser, login } = require('./controllers/authorization');
 
 const {
@@ -23,14 +25,21 @@ const {
 } = process.env;
 
 const app = express();
-
-app.use(cors());
-
 app.use(express.json());
+app.use(cors());
+app.use(requestLogger);
+
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 app.post('/signin', loginValidation, login);
 app.post('/signup', createUserValidation, createUser);
 app.use(auth);
 app.use(router);
+app.use(errorLogger);
 app.use(errors());
 app.use((error, request, response, next) => {
   const {

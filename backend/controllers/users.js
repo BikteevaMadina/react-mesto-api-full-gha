@@ -71,7 +71,7 @@ module.exports.updateUser = (request, response, next) => { // обновлени
     .then((user) => response.status(HTTP_STATUS_OK)
       .send(user))
     .catch((err) => {
-      if (err.name === c|| err.name === 'ValidationError') {
+      if (err.name === 'CastError' || err.name === 'ValidationError') {
         return next(new NotFoundError('Invalid user by id'));
       }
       return next(err);

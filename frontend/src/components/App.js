@@ -64,13 +64,13 @@ function App() {
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some((user) => user._id === currentUser._id);
+    const isLiked = card.likes.some((userId) => userId === currentUser._id);
 
     api
       .addLike(card._id, !isLiked)
-      .then((newCard) =>
+      .then((data) =>
         setCards((state) =>
-          state.map((item) => (item._id === card._id ? newCard : item))
+          state.map((item) => (item._id === card._id ? data.data : item))
         )
       )
       .catch((err) => console.log(err));

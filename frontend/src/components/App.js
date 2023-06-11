@@ -5,7 +5,7 @@ import Main from "./Main";
 import Footer from "./Footer";
 import PopupWithForm from "./PopupWithForm";
 import ImagePopup from "./ImagePopup";
-import CurrentUserContext from "../contexts/CurrentUserContext";
+import {CurrentUserContext} from "../contexts/CurrentUserContext";
 import EditProfilePopup from "./EditProfilePopup";
 import EditAvatarPopup from "./EditAvatarPopup";
 import api from "../utils/Api";
@@ -34,6 +34,7 @@ function App() {
   const history = useHistory();
 
   useEffect(() => {
+    if(isLoggedIn){
     api
       .getUserInfo()
       .then((profileInfo) => setCurrentUser(profileInfo))
@@ -43,7 +44,7 @@ function App() {
       .getInitialCards()
       .then((data) => {
         setCards(
-          data.map((card) => ({
+          data.revers().map((card) => ({
             _id: card._id,
             name: card.name,
             link: card.link,
@@ -53,7 +54,8 @@ function App() {
         );
       })
       .catch((err) => console.log(err));
-  }, []);
+    }
+  }, [isLoggedIn]);
 
   function closeAllPopup() {
     setEditAvatarPopupOpen(false);
